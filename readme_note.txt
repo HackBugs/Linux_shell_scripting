@@ -1,6 +1,7 @@
 Download - Textpad editor for windows 
 Study about these cmds
-head, awk, echo 
+head, awk, echo, tail, nohup
+tail -fvn 1000 nohup.oit
 
 -------------------------------------
 First Create = shell scripting file 
