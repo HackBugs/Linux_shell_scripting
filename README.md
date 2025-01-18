@@ -3,6 +3,8 @@
 Study about these cmds
 head, awk, echo 
 
+search - unix cmd for dba
+
 <hr>
 First Create = shell scripting file 
 Scripe_name.sh
