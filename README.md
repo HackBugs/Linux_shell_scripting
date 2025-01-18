@@ -211,6 +211,3 @@ echo | awk 'BEGIN { print strftime("%Y-%m-%d %H:%M:%S") }'
 Output: 2025-01-18 14:45:30
 
 
-
-Let me know if you need more examples or explanations for specific functions!
-
