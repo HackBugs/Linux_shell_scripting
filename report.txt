@@ -1,0 +1,2 @@
+date       time  CPU MEM  SWAP  BKP_DB       Root_DB
+19-01-2025 01:53 0.4 11Gi 4.0Gi 76%/BackupDB 14%/
