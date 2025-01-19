@@ -51,7 +51,8 @@ vi capture_data.sh
 ```sh
 cd /home/monitor/log_monitor_data
 cur_time=`date '+%d-%m-%Y %H:%M'`
-cpu_util=`top -b -n 1 | awk 'BEGIN { FS = ","} NR==3 { print $4 }' | awk '{print 100-$1}'`
+## cpu_util=`top -b -n 1 | awk 'BEGIN { FS = ","} NR==3 { print $4 }' | awk '{print 100-$1}'`
+cpu_util=`top -b -n 1 | awk `NR==3 {print $2, $3}'`
 mem_used=`free -h | awk 'NR==2 {print $3}'`
 swap_used=`free -h | awk 'NR==3 {print $3}'`
 Used_Backup_DB=`df -h | awk 'NR==9 {print $5 $6}'`
