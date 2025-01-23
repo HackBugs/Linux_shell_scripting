@@ -69,7 +69,7 @@ date       time  CPU MEM  SWAP  BKP_DB       Root_DB
 <hr>
 
 ```
-crontab -e */15 * * * * sh hai/home/monitor/log_monitor_data/capture_data.sh
+crontab -e */15 * * * * sh /home/monitor/log_monitor_data/capture_data.sh
 ```
 ```
 crontab -l
