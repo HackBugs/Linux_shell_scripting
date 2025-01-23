@@ -1,7 +1,10 @@
 
+
+```
 ps -ef | grep capture_data.sh
 ps -ef | grep monitor_file.sh
 tail -f 10
+```
 
 <hr>
 
