@@ -79,10 +79,9 @@ date       time  CPU MEM  SWAP  BKP_DB       Root_DB
 
 <hr>
 
+### `nohup` command ensures the script keeps running even if the terminal is closed, and the & runs it in the background.
 ```
 nohup /home/monitor/log_monitor_data/capture_data.sh &
-
-`nohup` command ensures the script keeps running even if the terminal is closed, and the & runs it in the background.
 ```
 
 ```
