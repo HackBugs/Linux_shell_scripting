@@ -88,7 +88,7 @@ do
 done
 ```
 
-> # Line-by-Line Explanation of script 
+> ## Line-by-Line Explanation of script 
 
 #### 1. **`#!/bin/bash`**
 - **Purpose**: Specifies the script should be run with the Bash shell.
@@ -218,3 +218,66 @@ Each row in `task_monitor.txt` will look like this:
 ```
 
 # 😊
+
+> ## `fi` ka use Bash scripting me ek **conditional block** ko close karne ke liye kiya jata hai. Iska matlab hota hai "if ka end." Jab hum `if` statement likhte hain, to uska end karne ke liye hamesha `fi` lagana zaroori hota hai.
+
+### Code me `fi` kahan use ho raha hai?
+```bash
+if [ ! -f task_monitor.txt ] || [ $(wc -l < task_monitor.txt) -eq 0 ]; then
+    # Headers ko add karte hain agar file empty ya nahi hai
+    printf "%-20s %-15s %-15s %-15s %-15s %-10s %-10s %-20s %-10s\n" \
+    "Timestamp" "Hostname" "OS_Name" "IP_Address" "CPU_Utilization" "Mem_Used" "Swap_Used" "Uptime" "DB_Size" > task_monitor.txt
+fi
+```
+
+---
+
+### `if` aur `fi` ka kaam kya hai?
+
+1. **`if`**:
+   - Yeh condition check karta hai.
+   - Agar condition true hai, to uske andar ka code execute hota hai.
+
+2. **`fi`**:
+   - Yeh batata hai ki `if` statement yahan khatam ho gayi hai.
+   - Iske bina script error dega.
+
+---
+
+### Iss code me `fi` kyu use kiya gaya?
+- **Purpose**: 
+  - Yeh check karta hai ki `task_monitor.txt` file exist karti hai ya nahi.
+  - Agar file exist nahi karti ya khali hai, tab headers file me add honge.
+  - Jab condition check khatam ho jaati hai, to uska closure karne ke liye `fi` lagaya gaya.
+
+---
+
+### Conditional Block ka Flow:
+```bash
+if [ condition ]; then
+    # Yeh block tab chalega jab condition true ho
+    echo "Condition true hai"
+fi
+```
+
+Agar `fi` nahi lagayenge, to Bash interpreter confuse hoga ki `if` block ka end kahan hai, aur script error throw karegi.
+
+---
+
+### Ek Simple Example:
+
+#### Without `fi`:
+```bash
+if [ 1 -eq 1 ]; then
+    echo "Numbers are equal"
+# Error: Syntax error, kyunki `fi` nahi diya
+```
+
+#### With `fi`:
+```bash
+if [ 1 -eq 1 ]; then
+    echo "Numbers are equal"
+fi
+# Output: Numbers are equal
+```
+
