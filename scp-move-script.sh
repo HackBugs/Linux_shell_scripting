@@ -1,3 +1,5 @@
+> ## Fist script but not working 
+
 ```
 #!/bin/bash
 
@@ -11,4 +13,10 @@ scp "$SRC_DIR" "$DEST" > "$LOG_FILE" 2>&1
 
 # Display output in terminal as well
 cat "$LOG_FILE"
+```
+
+> ## Secong script this is working
+
+```
+script -q -c "scp /home/alam/.ssh/ssh-transfar-check/* root@192.168.1.124:/root/ssh-transfar-check-2" > /home/alam/.ssh/ssh-transfar-check/test.txt
 ```
